@@ -1,4 +1,8 @@
 steps:
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'gcr.io/chrome-empire-210218/html-css-website-course', '.' ]
+
 - name: gcr.io/cloud-builders/gcloud
   args:
   - kms
@@ -11,6 +15,3 @@ steps:
 
 secrets:
 - kmsKeyName: projects/chrome-empire-210218/locations/global/keyRings/TestKeyRing/cryptoKeys/TestKey/cryptoKeyVersions/1
-
-images:
-- 'gcr.io/chrome-empire-210218/html-css-website-course'
