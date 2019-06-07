@@ -9,8 +9,8 @@ steps:
   - --location=global
   - --keyring TestKeyRing
   - --key TestKey
-  
-  - name: 'gcr.io/cloud-builders/docker'
+ 
+- name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'gcr.io/chrome-empire-210218/html-css-website-course', '.' ]
 
 secrets:
