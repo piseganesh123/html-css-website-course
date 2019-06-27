@@ -1,4 +1,14 @@
 steps:
+- name: gcr.io/cloud-builders/gcloud
+  args:
+  - kms
+  - decrypt
+  - --ciphertext-file=secrets.txt.enc
+  - --plaintext-file=secrets.txt
+  - --location=global
+  - --keyring=TestKeyRing
+  - --key=TestKey
+  
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'gcr.io/concrete-crow-244606/html-css-website-course', '.' ]
 
