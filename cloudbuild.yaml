@@ -11,7 +11,25 @@ steps:
   - --key=TestKey
   
 - name: 'gcr.io/cloud-builders/docker'
+  args: 
+  - 'build'
+  - '--build-arg'
+  - 'gcr.io/concrete-crow-244606/sonar-scanner:latest'
+  - '-t'
+  - 'gcr.io/concrete-crow-244606/sonar-scanner:3.2.0.1227'
+  - '.'
+  
+- name: 'gcr.io/$PROJECT_ID/sonar-scanner:latest'
+    args:
+    - '-Dsonar.host.url=http://104.198.153.106:9000'
+    - '-Dsonar.login=ef4ae562611d1b8cb4fc7fb4338a92bbed995bc1'
+    - '-Dsonar.projectKey=CloudBuild'
+    - '-Dsonar.sources=.'
+ 
+- name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'gcr.io/concrete-crow-244606/html-css-website-course', '.' ]
 
 images:
+- 'gcr.io/concrete-crow-244606/sonar-scanner:latest'
+- 'gcr.io/concrete-crow-244606/sonar-scanner:3.2.0.1227'
 - 'gcr.io/concrete-crow-244606/html-css-website-course'
