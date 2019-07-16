@@ -10,7 +10,7 @@ steps:
   - --keyring=TestKeyRing
   - --key=TestKey
    
-- name: 'gcr.io/concrete-crow-244606/sonarqube7:latest'
+- name: 'gcr.io/concrete-crow-244606/sonarqube'
     args:
     - '-Dsonar.host.url=http://104.198.153.106:9000'
     - '-Dsonar.login=ef4ae562611d1b8cb4fc7fb4338a92bbed995bc1'
@@ -21,5 +21,5 @@ steps:
   args: [ 'build', '-t', 'gcr.io/concrete-crow-244606/html-css-website-course', '.' ]
 
 images:
-- 'gcr.io/concrete-crow-244606/sonarqube7:latest'
+- 'gcr.io/concrete-crow-244606/sonarqube'
 - 'gcr.io/concrete-crow-244606/html-css-website-course'
