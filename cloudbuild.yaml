@@ -1,6 +1,6 @@
 steps:
    
-- name: 'gcr.io/concrete-crow-244606/sonarqube:new'
+- name: 'gcr.io/concrete-crow-244606/sonar-scanner:latest'
     args:
     - 'sonar-scanner'
     - '-Dsonar.host.url=http://104.198.153.106:9000'
@@ -12,5 +12,4 @@ steps:
   args: [ 'build', '-t', 'gcr.io/concrete-crow-244606/html-css-website-course', '.' ]
 
 images:
-- 'gcr.io/concrete-crow-244606/sonarqube:new'
 - 'gcr.io/concrete-crow-244606/html-css-website-course'
