@@ -1,6 +1,7 @@
 steps:
 - name: 'gcr.io/sodium-sublime-243008/sonar-scanner:latest'
     args:
+    - 'sonar-scanner'
     - '-Dsonar.host.url=https://sonarcloud.io'
     - '-Dsonar.login=d3ae4135ea3bf20be8d5fc677fc9142075f65311'
     - '-Dsonar.organization=piseganesh123'
