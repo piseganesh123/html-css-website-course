@@ -10,8 +10,9 @@ steps:
   - --keyring=TestKeyRing
   - --key=TestKey
    
-- name: 'gcr.io/concrete-crow-244606/sonar-scanner'
+- name: 'gcr.io/concrete-crow-244606/sonarqube:new'
     args:
+    - 'sonar-scanner'
     - '-Dsonar.host.url=http://104.198.153.106:9000'
     - '-Dsonar.login=6368b35ae02c92d067fde1877f7b9f91941fe4d7'
     - '-Dsonar.projectKey=sample-project'
